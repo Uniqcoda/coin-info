@@ -10,10 +10,11 @@ export default function Coin({ name, price, symbol, icon }) {
 
     return (
         <div className='coin'>
-            <h2>Name: {name}</h2>
-            <img src={icon} alt='coin-icon' />
-            <h4>Price: {currencyFormatter.format(price)} </h4>
-            <h4>Symbol: {symbol} </h4>
+            <div className='coin-header'>
+                <img src={icon} alt='coin-icon' />
+                <h2>{name} - {symbol}</h2>
+            </div>
+            <h3>Price: {currencyFormatter.format(price)} </h3>
         </div>
     );
 }
