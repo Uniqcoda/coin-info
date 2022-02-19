@@ -8,6 +8,10 @@
     padding: 0%;
     margin: 0%;
   }
+
+  .no-match {
+margin: 10px;
+  }
   
   .cryptoHeader {
     width: 100%;

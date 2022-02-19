@@ -30,7 +30,7 @@ function App() {
             </div>
             <div className='cryptoDisplay'>
                 {filteredCoins.map((coin, index) => (
-                    <Coin key={index} name={coin.name} price={coin.price} symbol={coin.symbol} icon={coin.icon} />
+                    <Coin key={index} coin={coin} />
                 ))}
             </div>
         </div>

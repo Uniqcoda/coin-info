@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Coin({ name, price, symbol, icon }) {
+export default function Coin({ coin }) {
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -10,14 +10,14 @@ export default function Coin({ name, price, symbol, icon }) {
     });
 
     return (
-        <Link to="/details" className='coin'>
+        <Link to={`/details/${coin.id}`} className='coin'>
             <div className='coin-header'>
-                <img src={icon} alt='coin-icon' />
+                <img src={coin.icon} alt='coin-icon' />
                 <h2>
-                    {name} - {symbol}
+                    {coin.name} - {coin.symbol}
                 </h2>
             </div>
-            <h3>Price: {currencyFormatter.format(price)} </h3>
+            <h3>Price: {currencyFormatter.format(coin.price)} </h3>
         </Link>
     );
 }
