@@ -10,7 +10,6 @@ function App() {
         Axios.get('https://api.coinstats.app/public/v1/coins?skip=0').then((response) => {
             setListOfCoins(response.data.coins);
         });
-        console.log({ listOfCoins });
     }, []);
 
     const filteredCoins = listOfCoins.filter((coin) => coin.name.toLowerCase().includes(searchWord.toLowerCase()));
