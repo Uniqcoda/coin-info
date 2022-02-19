@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Coin({ name, price, symbol, icon }) {
     const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -9,12 +10,14 @@ export default function Coin({ name, price, symbol, icon }) {
     });
 
     return (
-        <div className='coin'>
+        <Link to="/details" className='coin'>
             <div className='coin-header'>
                 <img src={icon} alt='coin-icon' />
-                <h2>{name} - {symbol}</h2>
+                <h2>
+                    {name} - {symbol}
+                </h2>
             </div>
             <h3>Price: {currencyFormatter.format(price)} </h3>
-        </div>
+        </Link>
     );
 }
