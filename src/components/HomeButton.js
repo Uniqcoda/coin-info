@@ -11,9 +11,9 @@ export default function HomeButton() {
     }
 
     return (
-        <button type='button' onClick={handleClick}>
+        <button type='button' style={{cursor: "pointer"}} onClick={handleClick}>
+            Home {'  '}
             <FontAwesomeIcon icon={faHome} />
-            Home
         </button>
     );
 }

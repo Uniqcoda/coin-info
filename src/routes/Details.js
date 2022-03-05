@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { currencyFormatter } from '../utils/formatters';
-// import HomeButton from '../components/HomeButton';
+import { currencyFormatter, thousandSeparator } from '../utils/formatters';
+import HomeButton from '../components/HomeButton';
 
 export default function Details() {
     const location = useLocation();
@@ -10,9 +10,10 @@ export default function Details() {
     console.log({ coin });
     return (
         <div>
+            <div className='home-button'>
+                <HomeButton />
+            </div>
             <div className='cryptoHeader'>
-            {/* <HomeButton /> */}
-
                 <div className='sub-header'>
                     <img src={coin.icon} alt='coin-icon' className='coin-image' />
                     <div>
@@ -26,18 +27,17 @@ export default function Details() {
                     <p>Price: {currencyFormatter.format(coin.price)} </p>
                     <p>BTC: {coin.priceBtc}</p>
                     <p>Rank: {coin.rank}</p>
-                    <p>Available Supply: {coin.availableSupply}</p>
-                    <p>Total Supply: {coin.totalSupply}</p>
+                    <p>Available Supply: {thousandSeparator(coin.availableSupply)}</p>
+                    <p>Total Supply: {thousandSeparator(coin.totalSupply)}</p>
+                    <p>Market Cap: {thousandSeparator(coin.marketCap)}</p>
                     <p>Volume: {coin.volume}</p>
-                    <div  className='button-container'>
-
-                    <a className='page-button' href={coin.websiteUrl}>
-                        Visit website
-                    </a>
+                    <div className='button-container'>
+                        <a className='page-button' href={coin.websiteUrl}>
+                            Visit website
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     );
 }
-

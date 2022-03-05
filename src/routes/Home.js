@@ -17,6 +17,7 @@ function App() {
     return (
         <div>
             <div className='cryptoHeader'>
+                <h1>Hi! Welcome to Coin-Info</h1>
                 <input
                     type='text'
                     name=''
@@ -28,9 +29,11 @@ function App() {
                 />
             </div>
             <div className='cryptoDisplay'>
-                {filteredCoins.map((coin, index) => (
-                    <Coin key={index} coin={coin} />
-                ))}
+                {filteredCoins.length > 0 ? (
+                    filteredCoins.map((coin, index) => <Coin key={index} coin={coin} />)
+                    ) : (
+                    <div>Loading...</div>
+                )}
             </div>
         </div>
     );
