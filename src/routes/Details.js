@@ -5,9 +5,7 @@ import HomeButton from '../components/HomeButton';
 
 export default function Details() {
     const location = useLocation();
-    console.log(location.state);
     const coin = location.state.coin;
-    console.log({ coin });
     return (
         <div>
             <div className='home-button'>
